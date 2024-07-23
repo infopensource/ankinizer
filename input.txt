@@ -1,0 +1,104 @@
+der Apfel
+das Auto
+der Baum
+das Buch
+der Computer
+das Fahrrad
+der Freund
+die Freundin
+das Haus
+der Hund
+die Katze
+die Schule
+der Stuhl
+der Tisch
+das Wasser
+der Weg
+die Zeit
+das Fenster
+der Ball
+die Blume
+das Brot
+das Ei
+der Fisch
+die Gabel
+das Glas
+der Koffer
+der Kuchen
+das Licht
+das Mädchen
+der Mann
+die Nacht
+der Name
+das Pferd
+die Sonne
+der Tag
+der Zug
+die Uhr
+die Wand
+das Zimmer
+die Stadt
+das Kind
+der Lehrer
+die Lehrerin
+die Mutter
+sein
+haben
+gehen
+kommen
+machen
+sehen
+essen
+trinken
+lesen
+schreiben
+spielen
+arbeiten
+lernen
+wohnen
+fahren
+sprechen
+stehen
+sitzen
+liegen
+laufen
+schwimmen
+kaufen
+verkaufen
+helfen
+lieben
+hören
+sagen
+fragen
+antworten
+brauchen
+vergessen
+gewinnen
+verlieren
+wissen
+kennen
+denken
+glauben
+verstehen
+finden
+geben
+nehmen
+bringen
+wollen
+müssen
+können
+sollen
+dürfen
+mögen
+groß
+klein
+alt
+jung
+neu
+gut
+schlecht
+schön
+hässlich
+kalt
+warm
+heiß
