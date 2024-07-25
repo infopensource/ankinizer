@@ -1,5 +1,6 @@
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication,QFileDialog,QMessageBox
+from PySide6.QtGui import QIcon
 from main import Translator
 import threading
 
@@ -8,11 +9,17 @@ class MainWindow:
         loader = QUiLoader()
         self.ui = loader.load("main.ui")
         self.ui.setWindowTitle('Ankinizer')
+        self.ui.setWindowIcon(QIcon('./icon.png'))
         self.ui.statusBar().showMessage('Started')
+        
+        self.ui.actionOpen.triggered.connect(self.input_explorer)
+        self.ui.actionSave.triggered.connect(self.output_explorer)
+        self.ui.actionAbout.triggered.connect(self.show_about)
         
         self.ui.ImportButton.clicked.connect(self.input_explorer)
         self.ui.ExportButton.clicked.connect(self.output_explorer)
         self.ui.RunButton.clicked.connect(self.run)
+        self.ui.AdvancedButton.clicked.connect(self.show_advanced)
         
         # self.ui.FrontList.addItem('German')
         self.ui.FrontList.itemClicked.connect(self.update_list)
@@ -20,6 +27,14 @@ class MainWindow:
         self.translator = Translator()
         self.translator.input_file = ''
         self.translator.output_file = ''
+        
+    def show_about(self):
+        self.about_window = AboutWindow()
+        self.about_window.ui.show()
+    
+    def show_advanced(self):
+        self.advanced_window = AdvancedWindow()
+        self.advanced_window.ui.show()
     
     def input_explorer(self):
         try:
@@ -69,7 +84,26 @@ class MainWindow:
         for i in self.translator.output_lines:
             if i.split(';')[0] == self.ui.FrontList.currentItem().text():
                 self.ui.BackEdit.setHtml(i.split(';')[1])
-        
+
+class AdvancedWindow:
+    def __init__(self):
+        loader = QUiLoader()
+        self.ui = loader.load("Advanced.ui")
+        self.ui.setWindowTitle('Ankinizer - Advanced')
+        self.ui.CancelButton.clicked.connect(self.close)
+        self.ui.ApplyButton.clicked.connect(self.apply)
+    
+    def close(self):
+        self.ui.close()
+    
+    def apply(self):
+        pass
+
+class AboutWindow:
+    def __init__(self):
+        loader = QUiLoader()
+        self.ui = loader.load("About.ui")
+        self.ui.setWindowTitle('Ankinizer - About')
 
 if __name__ == '__main__':
     app = QApplication([])
